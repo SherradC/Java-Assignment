@@ -28,10 +28,15 @@ printIntRev(10);
        checkInput([1,2,3,4]) =====> -1*/
 
 function checkInput(x){
-    return typeof(x);
-    }
+	if (x==Number|| x==String|| x==Boolean){
+		return typeof x;
+	} else {
+		return -1;
+	}
+    	
+    };
 
-checkInput("jbj");
+checkInput(hgg);
 
 /*
 Write the function simpleEvenAdding(num) taking a number and add up all the even numbers from 1 to num. 
