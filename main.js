@@ -1,22 +1,22 @@
 // Write the function printInt(n) taking one parameter n and print all natural numbers from 1 to n in console.
 
-function printInt(n) {
-   var n ;
-    for(var y= 1; y<=n; y++) {
-        console.log(y);
-     }
-}
- printInt(9);
+// function printInt(n) {
+//    var n ;
+//     for(var y= 1; y<=n; y++) {
+//         console.log(y);
+//      }
+// }
+//  printInt(9);
 
 // Write the function printIntRev(n) taking one parameter n and  print all natural numbers in reverse in console (from n to 1).
 
-function printIntRev(r) {
-    var r;
-    for(var x=1; x<=r; r--){
-        console.log(r);
-    }
-}
-printIntRev(10);
+// function printIntRev(r) {
+//     var r;
+//     for(var x=1; x<=r; r--){
+//         console.log(r);
+//     }
+// }
+// printIntRev(10);
 
 
 // Write the function checkInput(x) taking one parameter x and return the string ‘number’ if x is a number; return the string ‘string’ if x is a string; and return ‘boolean’ if x is a boolean. Otherwise returns -1. 
@@ -27,25 +27,49 @@ printIntRev(10);
        checkInput(true)=====> boolean
        checkInput([1,2,3,4]) =====> -1*/
 
-function checkInput(x){
-	if (x==Number|| x==String|| x==Boolean){
-		return typeof x;
-	} else {
-		return -1;
-	}
+// var x;
+// function checkInput(x){
+// 	if (x==Number|| x==String|| x==Boolean){
+// 		return typeof x;
+// 	} else {
+// 		return -1;
+// 	}
     	
-    };
+//     };
 
-checkInput(hgg);
+// checkInput(hgg);
 
-/*
-Write the function simpleEvenAdding(num) taking a number and add up all the even numbers from 1 to num. 
-	Examples: simpleEvenAdding(5) ======> 6 (because 2+4 = 6)
+
+// Write the function simpleEvenAdding(num) taking a number and add up all the even numbers from 1 to num. 
+	/*Examples: simpleEvenAdding(5) ======> 6 (because 2+4 = 6)
 	       simpleEvenAdding(10) ======> 30 (because 2+4+6+8+10 = 30)
 	       simpleEvenAdding(11) ======> 30 (because 2+4+6+8+10 = 30)
                   simpleEvenAdding(1) ======> 0
-	       simpleEvenAdding(0) =======> 0
+		   simpleEvenAdding(0) =======> 0*/
+		   
+function simpleEvenAdding(num){
+	var answer=[];
+	var sum;
 
+
+	for (var s=0; s<num; s++){
+		if (s % 2 === 0) {
+			answer+=s;	
+			console.log(answer);
+		}
+	}
+	for (var y = 0; y < answer.length; y++){
+			sum=y
+		}
+		console.log(sum);
+		indexOf(answer);
+	
+}
+
+simpleEvenAdding(6);
+
+
+/*
 Write the function letterCapitalize(str) taking a string and capitalize the first letter of each word. The given words will be separated by only one space.
 	Examples:
 		letterCapitalize(“hello world”) ===========> “Hello Word”
