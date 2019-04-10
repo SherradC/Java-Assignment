@@ -141,25 +141,28 @@ for (var i = 0; i <= num; i++) {
 	if (num < 60 && !(num % 60 === 0)){
 		minutes = num;	
 	} else if(num >= 60) {
-		hours = num / 60;
-		
-	}console.log(hours+ ":" +minutes);
-	console.log(num % 2);
-};
+		hours = parseInt(num/60);
+		minutes = num % 60;
+	}
+};console.log(hours+ ":" +minutes);
 
 };
 
-timeConvert(124);
+// timeConvert(285);
 
 
 
-// 9. Write the function findStr(str, long) taking two strings as parameters and return how many str you can find in long. Assume Str is not empty string.
-// Example:
-// 	findStr(“hi”, “dasdhidasdahidashi”) =======> 3
-// 	findStr(“o”, “daodo”) =======> 2
-// 	findStr(“ha”,”abcde”)=======> 0
-// 	findStr(“h”, “hihelloho”)======> 3
+/* 9. Write the function findStr(str, long) taking two strings as parameters and return how many str you can find in long. Assume Str is not empty string.
+Example:
+	findStr(“hi”, “dasdhidasdahidashi”) =======> 3
+	findStr(“o”, “daodo”) =======> 2
+	findStr(“ha”,”abcde”)=======> 0
+	findStr(“h”, “hihelloho”)======> 3 */
 
+
+
+
+	
 // 10. Write the function selfDividingNumbers(left, right) taking two number bound as parameters and returns an array of every possible self dividing number between 
 // them, including the bounds. 
 
