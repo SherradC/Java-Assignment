@@ -1,15 +1,17 @@
-// 1. Write the function printInt(n) taking one parameter n and print all natural numbers from 1 to n in console.
+/* 1. Write the function printInt(n) taking one parameter n and print all natural numbers from 1 to n in console. */
 
 function printInt(n) {
-   var n ;
-    for(var y= 1; y<=n; y++) {
+	var n ;
+	for(var y= 1; y<=n; y++) {
         console.log(y);
      }
 }
 
 //  printInt(9);
 
-// 2. Write the function printIntRev(n) taking one parameter n and  print all natural numbers in reverse in console (from n to 1).
+
+
+/* 2. Write the function printIntRev(n) taking one parameter n and  print all natural numbers in reverse in console (from n to 1). */
 
 function printIntRev(r) {
     var r;
@@ -21,31 +23,33 @@ function printIntRev(r) {
 // printIntRev(10);
 
 
-// 3. Write the function checkInput(x) taking one parameter x and return the string ‘number’ if x is a number; return the string ‘string’ if x is a string; and return ‘boolean’ if x is a boolean. Otherwise returns -1. 
-/*Examples:
+
+/* 3. Write the function checkInput(x) taking one parameter x and return the string ‘number’ if x is a number; return the string ‘string’ if x is a string; and return ‘boolean’ if x is a boolean. Otherwise returns -1. 
+Examples:
        checkInput(5) ====> ‘number’
        checkInput(‘hello’)======> ‘string’
        checkInput(‘5’) ======> ‘string’
        checkInput(true)=====> boolean
-       checkInput([1,2,3,4]) =====> -1*/
+       checkInput([1,2,3,4]) =====> -1 */
 
 function checkInput(k){
-	if (k===Object || k==undefined){
-		console.log(-1);
-	} else {
+	if (typeof k == typeof 5 || typeof k == typeof "String" || typeof k == typeof true){
 		console.log(typeof k);
+	} else {
+		console.log(-1);
 	}
 }
 
-// checkInput([]);
+// checkInput();
 
 
-// 4. Write the function simpleEvenAdding(num) taking a number and add up all the even numbers from 1 to num. 
+
+/* 4. Write the function simpleEvenAdding(num) taking a number and add up all the even numbers from 1 to num. 
 	/*Examples: simpleEvenAdding(5) ======> 6 (because 2+4 = 6)
 	       simpleEvenAdding(10) ======> 30 (because 2+4+6+8+10 = 30)
 	       simpleEvenAdding(11) ======> 30 (because 2+4+6+8+10 = 30)
                   simpleEvenAdding(1) ======> 0
-		   simpleEvenAdding(0) =======> 0*/
+		   simpleEvenAdding(0) =======> 0 */
 		   
 function simpleEvenAdding(num){
 	var answer=0;
@@ -61,51 +65,93 @@ function simpleEvenAdding(num){
 
 
 
-// 5. Write the function letterCapitalize(str) taking a string and capitalize the first letter of each word. The given words will be separated by only one space.
-// 	Examples:
-// 		letterCapitalize(“hello world”) ===========> “Hello Word”
-// letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot Find The Answer Online”
+/* 5. Write the function letterCapitalize(str) taking a string and capitalize the first letter of each word. The given words will be separated by only one space.
+	Examples:
+		letterCapitalize(“hello world”) ===========> “Hello Word”
+letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot Find The Answer Online”
 	
-// Hint: There is a built-in function in javaScript that change string into uppercase. There is also a function to separate string into an array of characters.
+Hint: There is a built-in function in javaScript that change string into uppercase. There is also a function to separate string into an array of characters.*/
 
 function letterCapitalize(t){
 	var store;
-	var place;
-	
+	var place=[];
 	store = t.split(" ");
-	
+
 	for (var l=0; l<store.length; l++){
-		place = store[l][0].toUpperCase() + store[l].slice(1);
-		console.log(place);
+		place.push([store[l][0].toUpperCase() + store[l].slice(1)]);
 	}
-	console.log();
-	console.log(store);
+	console.log(place.join(" "));
 }
 
-letterCapitalize("See it's a couple ppl every generation that wasn't supposed to make it out, but decode the Matrix")
+// letterCapitalize("see it's a couple ppl every generation that wasn't supposed to make it out, but decode the matrix")
+
+
 
  /* 6. Write the function simpleReverse(str) taking a string and return the string in reversed order. 
-// 	Examples:
-// 		// simpleReverse(‘hello’) ======> ‘olleh’
-// 		// simpleReverse(‘I Love Code’) ======> ‘edoC evoL I’
+	Examples:
+		// simpleReverse(‘hello’) ======> ‘olleh’
+		// simpleReverse(‘I Love Code’) ======> ‘edoC evoL I’
 
-// Hint: Think of how you can loop through a string or array of characters backwards to produce a new string
+Hint: Think of how you can loop through a string or array of characters backwards to produce a new string */
 
-// 7. Write the function findDiff(arr) taking an array of numbers as parameter and return the difference between the maximum number and the minimum number (max - min). 
-// 	Examples:
-// 	findDiff([1,2,4,6,20, 3]) =======> 19 (Because 20 - 1 = 19)
-// 	findDiff([24, 22, 23, 22, 24]) =======> 2 (Because 24 - 22 = 2)
-// 	findDiff([1, 1, 1, 1, 1]) =======> 0 
-// findDiff([1]) ======> 0;
-// findDiff([]) =======> 0;
+function simpleReverse(str){
+	var store;
+	for (var i=str.length; i>=0; i--){
+		store += str[i];
+		
+	}console.log(store);
+}
 
-// 8. Write the function timeConvert(num) taking a number as parameter and return the number of hours and minutes the parameter converts to. Separate the number of hours and minutes with a colon.
-// 	Example:
-// 		timeConvert(61) ======> 1:1
-// 		timeConvert(63) =======> 1:3
-// 		timeConvert(120)======> 2:0
-// 		timeConvert(59)=======> 0:59
-//     	Hints: Dividing and modulo the number 60.
+simpleReverse("All my life, I been grinding all my life!")
+
+
+
+/* 7. Write the function findDiff(arr) taking an array of numbers as parameter and return the difference between the maximum number and the minimum number (max - min). 
+	Examples:
+	findDiff([1,2,4,6,20, 3]) =======> 19 (Because 20 - 1 = 19)
+	findDiff([24, 22, 23, 22, 24]) =======> 2 (Because 24 - 22 = 2)
+	findDiff([1, 1, 1, 1, 1]) =======> 0 
+	findDiff([1]) ======> 0;
+	findDiff([]) =======> 0; */
+
+function findDiff(arr){
+	var answer;
+
+	answer = Math.max(...arr) - Math.min(...arr);
+	console.log(answer);
+}
+
+// findDiff([1,2,3,4,5, 100]);
+
+
+
+/* 8. Write the function timeConvert(num) taking a number as parameter and return the number of hours and minutes the parameter converts to. Separate the number of hours and minutes with a colon.
+	Example:
+		timeConvert(61) ======> 1:1
+		timeConvert(63) =======> 1:3
+		timeConvert(120)======> 2:0
+		timeConvert(59)=======> 0:59
+    	Hints: Dividing and modulo the number 60. */
+
+function timeConvert(num){
+var hours = 0;
+var minutes = 0;
+
+for (var i = 0; i <= num; i++) {
+	if (num < 60 && !(num % 60 === 0)){
+		minutes = num;	
+	} else if(num >= 60) {
+		hours = num / 60;
+		
+	}console.log(hours+ ":" +minutes);
+	console.log(num % 2);
+};
+
+};
+
+timeConvert(124);
+
+
 
 // 9. Write the function findStr(str, long) taking two strings as parameters and return how many str you can find in long. Assume Str is not empty string.
 // Example:
