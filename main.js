@@ -34,13 +34,14 @@ Examples:
 
 function checkInput(k){
 	if (typeof k == typeof 5 || typeof k == typeof "String" || typeof k == typeof true){
-		console.log(typeof k);
+		// console.log(typeof k);
+		return typeof k;
 	} else {
-		console.log(-1);
+		return -1;
 	}
 }
 
-// checkInput();
+// console.log(checkInput([]));
 
 
 
@@ -73,9 +74,8 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
 Hint: There is a built-in function in javaScript that change string into uppercase. There is also a function to separate string into an array of characters.*/
 
 function letterCapitalize(t){
-	var store;
 	var place=[];
-	store = t.split(" ");
+	var store = t.split(" ");
 
 	for (var l=0; l<store.length; l++){
 		place.push([store[l][0].toUpperCase() + store[l].slice(1)]);
@@ -96,14 +96,13 @@ Hint: Think of how you can loop through a string or array of characters backward
 
 function simpleReverse(str){
 	var store = "";
-
 	for (var i=str.length-1; i>=0; i--){
 		store += str[i];
-		
-	}console.log(store);
+	}
+	return store;
 }
 
-// simpleReverse("All my life, I been grinding all my life!")
+// console.log(simpleReverse("All my life, I been grinding all my life!"));
 
 
 
@@ -116,13 +115,11 @@ function simpleReverse(str){
 	findDiff([]) =======> 0; */
 
 function findDiff(arr){
-	var answer;
-
-	answer = Math.max(...arr) - Math.min(...arr);
-	console.log(answer);
+	var answer = Math.max(...arr) - Math.min(...arr);
+	return answer;
 }
-
-// findDiff([1,2,3,4,5, 100]);
+	
+// console.log(findDiff([1,2,3,4,5, 100]));
 
 
 
@@ -135,17 +132,18 @@ function findDiff(arr){
     	Hints: Dividing and modulo the number 60. */
 
 function timeConvert(num){
-var hours = 0;
-var minutes = 0;
+	var hours = 0;
+	var minutes = 0;
 
-for (var i = 0; i <= num; i++) {
-	if (num < 60 && !(num % 60 === 0)){
-		minutes = num;	
-	} else if (num >= 60) {
-		hours = parseInt(num/60);
-		minutes = num % 60;
-	}
-};console.log(hours+ ":" +minutes);
+	for (var i = 0; i <= num; i++) {
+		if (num < 60 && !(num % 60 === 0)){
+			minutes = num;	
+		} else if (num >= 60) {
+			hours = parseInt(num/60);
+			minutes = num % 60;
+		}
+	};
+	console.log(hours+ ":" +minutes);
 
 };
 
@@ -161,22 +159,14 @@ Example:
 	findStr(“h”, “hihelloho”)======> 3 */
 
 function findStr(str, long){
-	var answer = 0;
-	var store=[];
-	// for (var i =0; i < long.length-str.length; i++){
-	// 	if (long.slice(i,i+str.length)===str){
-	// 		answer++;
-	// 	}
-	// }
-	// console.log(answer);
-
-	 store=long.split(str);
-	 answer = store.length - 1;
-	 console.log(answer);
+	
+	 var store=long.split(str);
+	 var answer = store.length - 1;
+	 return answer;
 
 }
 
-// findStr("ow", "oh, how wow double back around bow down to the crown");
+// console.log(findStr("ow", "oh, how wow double back around bow down to the crown"));
 
 
 	
@@ -198,7 +188,7 @@ function selfDividingNumbers(left, right){
 			answer.push(i);
 		}
 	}
-	console.log(answer);
+	return answer;
 }
 
 function isSelfDividing(num){
@@ -212,7 +202,7 @@ function isSelfDividing(num){
 	return true;
 }
 
-// selfDividingNumbers(15,220);
+// console.log(selfDividingNumbers(15,220));
 
 
 
@@ -253,15 +243,17 @@ average([]) ======> 0
 */
 
 function average(a){
+	if (a.length === 0){
+		return 0;
+	};
+
 	var store=0;
 
 	for (var i=0; i < a.length; i++){
-		if (a!==[]){
-			store+= a[i];
-		} else {
-			a.length=1;
-		}
-}console.log(store/a.length);
+		store+= a[i];
+		return store/a.length;
+	}
+
 }
 
-average([]);
+console.log(average([]));
