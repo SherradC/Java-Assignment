@@ -54,7 +54,7 @@ function checkInput(k){
 		   
 function simpleEvenAdding(num){
 	var answer=0;
-	for (var s=0; s<num; s++){
+	for (var s=0; s<=num; s++){
 		if (s % 2 === 0) {
 			answer+=s;	
 		}
@@ -243,16 +243,15 @@ average([]) ======> 0
 */
 
 function average(a){
+	var store=0;
 	if (a.length === 0){
 		return 0;
 	};
 
-	var store=0;
-
 	for (var i=0; i < a.length; i++){
 		store+= a[i];
-		return store/a.length;
-	}
+		
+	}return store/a.length;
 
 }
 
